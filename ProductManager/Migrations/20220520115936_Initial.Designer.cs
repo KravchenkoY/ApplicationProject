@@ -11,7 +11,7 @@ using ProductManager.Repository;
 
 namespace ProductManager.Migrations
 {
-    [DbContext(typeof(AppContext))]
+    [DbContext(typeof(ProductManagerContext))]
     [Migration("20220520115936_Initial")]
     partial class Initial
     {

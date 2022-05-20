@@ -10,7 +10,7 @@ using ProductManager.Repository;
 
 namespace ProductManager.Migrations
 {
-    [DbContext(typeof(AppContext))]
+    [DbContext(typeof(ProductManagerContext))]
     [Migration("20220520134124_Addusers")]
     partial class Addusers
     {

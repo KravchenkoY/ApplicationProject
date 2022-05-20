@@ -11,8 +11,8 @@ using ProductManager.Repository;
 namespace ProductManager.Migrations
 {
     [DbContext(typeof(ProductManagerContext))]
-    [Migration("20220520131806_Adduserrole")]
-    partial class Adduserrole
+    [Migration("20220520150212_renaming")]
+    partial class renaming
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -54,7 +54,36 @@ namespace ProductManager.Migrations
 
                     b.HasIndex("UserRoleId");
 
-                    b.ToTable("User");
+                    b.ToTable("Users");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Email = "osov0001@gmail.com",
+                            LastName = "Kravchenko",
+                            Name = "Yulia",
+                            Password = "1234",
+                            UserRoleId = 1
+                        },
+                        new
+                        {
+                            Id = 2,
+                            Email = "kenfield@gmail.com",
+                            LastName = "Field",
+                            Name = "Ken",
+                            Password = "barbeque",
+                            UserRoleId = 2
+                        },
+                        new
+                        {
+                            Id = 3,
+                            Email = "bradpitt@gmail.com",
+                            LastName = "Pitt",
+                            Name = "Brad",
+                            Password = "ahil",
+                            UserRoleId = 3
+                        });
                 });
 
             modelBuilder.Entity("ProductManager.Repository.Models.UserRole", b =>
@@ -71,7 +100,7 @@ namespace ProductManager.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("UserRole");
+                    b.ToTable("UserRoles");
 
                     b.HasData(
                         new

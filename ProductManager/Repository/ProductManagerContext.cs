@@ -3,11 +3,11 @@ using ProductManager.Repository.Models;
 
 namespace ProductManager.Repository
 {
-    internal class AppContext : DbContext
+    internal class ProductManagerContext : DbContext
     {
-        public DbSet<User> User { get; set; }
+        public DbSet<User> Users { get; set; }
 
-        public DbSet<UserRole> UserRole { get; set; }
+        public DbSet<UserRole> UserRoles { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

@@ -24,7 +24,7 @@
                         <TextBlock Text="User Login" Margin="20" Foreground="Black" TextAlignment="Center" FontSize="38"></TextBlock>
                         <StackPanel Orientation="Horizontal" Margin="10">
                             <materialDesign:PackIcon Kind="User" Width="25" Height="25" Foreground="Black"/>
-                            <TextBox x:Name="txtUsername" Margin="10 0" materialDesign:HintAssist.Hint="Enter Username" Foreground="Black" Width="250" BorderBrush="Black" CaretBrush="Violet" SelectionBrush="BlueViolet"/>
+                            <TextBox x:Name="txtUsername" Margin="10 0" materialDesign:HintAssist.Hint="Enter Email" Foreground="Black" Width="250" BorderBrush="Black" CaretBrush="Violet" SelectionBrush="BlueViolet"/>
                         </StackPanel>
                         <StackPanel Orientation="Horizontal" Margin="10">
                             <materialDesign:PackIcon Kind="Lock" Width="25" Height="25" Foreground="Black"/>

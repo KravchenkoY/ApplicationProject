@@ -9,7 +9,7 @@ using ProductManager.Repository;
 
 namespace ProductManager.Migrations
 {
-    [DbContext(typeof(AppContext))]
+    [DbContext(typeof(ProductManagerContext))]
     partial class AppContextModelSnapshot : ModelSnapshot
     {
         protected override void BuildModel(ModelBuilder modelBuilder)
@@ -52,7 +52,7 @@ namespace ProductManager.Migrations
 
                     b.HasIndex("UserRoleId");
 
-                    b.ToTable("User");
+                    b.ToTable("Users");
 
                     b.HasData(
                         new
@@ -98,7 +98,7 @@ namespace ProductManager.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("UserRole");
+                    b.ToTable("UserRoles");
 
                     b.HasData(
                         new
