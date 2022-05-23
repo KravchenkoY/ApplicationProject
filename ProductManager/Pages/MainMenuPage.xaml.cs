@@ -27,17 +27,17 @@ namespace ProductManager
 
         private void btnManagement_Click(object sender, RoutedEventArgs e)
         {
-
+            this.Content = new ManagementPage();
         }
 
         private void btnOverview_Click(object sender, RoutedEventArgs e)
         {
-
+            this.Content = new OverviewPage();
         }
 
         private void btnOrder_Click(object sender, RoutedEventArgs e)
         {
-
+            this.Content = new OrderPage();
         }
     }
 }

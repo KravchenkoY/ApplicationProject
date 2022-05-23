@@ -58,7 +58,6 @@ namespace ProductManager
                 MessageBox.Show("Successful login", "Success", MessageBoxButton.OK, MessageBoxImage.Information);
                 this.Content = new MainMenuPage();
             }
-            // open menu
         }
 
         private void Border_MouseDown(object sender, MouseButtonEventArgs e)
