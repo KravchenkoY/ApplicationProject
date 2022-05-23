@@ -33,7 +33,6 @@
                         <StackPanel Margin="10" HorizontalAlignment="Center">
                             <Button Width="100" Height="30" Style="{StaticResource MaterialDesignRaisedButton}"
                                     materialDesign:ButtonAssist.CornerRadius="8" BorderThickness="2" BorderBrush="Violet" Background="Lavender" Foreground="Black" ToolTip="Login" x:Name="btnLogin" Click="btnLogin_Click" Content="Login">
-                                
                             </Button>
                         </StackPanel>
                     </StackPanel>
