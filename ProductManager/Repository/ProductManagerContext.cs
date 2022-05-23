@@ -23,6 +23,11 @@ namespace ProductManager.Repository
                 new UserRole{Id=2,Name="Warehouse Worker"},
                 new UserRole{Id=3,Name="Sales Worker"},
             });
+
+            modelBuilder.Entity<PartnerType>().HasData(new PartnerType[] {
+                new PartnerType{Id=1,Name="Supplier"},
+                new PartnerType{Id=2,Name="Customer"}
+            });
         }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
