@@ -8,5 +8,6 @@ namespace ProductManager.Repository.Models
 {
     internal class Order
     {
+        public int Id { get; set; }
     }
 }

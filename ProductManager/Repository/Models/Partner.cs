@@ -17,7 +17,8 @@ namespace ProductManager.Repository.Models
         public string PostalCode { get; set; }
         public string Address { get; set; }
 
-
+        public int PartnerTypeId { get; set; }
+        public PartnerType PartnerType { get; set; }
 
     }
 }

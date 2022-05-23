@@ -10,17 +10,16 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace ProductManager
+namespace ProductManager.Windows
 {
     /// <summary>
-    /// Interaction logic for OrderPage.xaml
+    /// Interaction logic for OverviewWindow.xaml
     /// </summary>
-    public partial class OrderPage : Page
+    public partial class OverviewWindow : Window
     {
-        public OrderPage()
+        public OverviewWindow()
         {
             InitializeComponent();
         }

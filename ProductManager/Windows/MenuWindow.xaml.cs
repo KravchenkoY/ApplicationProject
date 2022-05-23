@@ -10,34 +10,39 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace ProductManager
+namespace ProductManager.Windows
 {
     /// <summary>
-    /// Interaction logic for MainMenuPage.xaml
+    /// Interaction logic for MenuWindow.xaml
     /// </summary>
-    public partial class MainMenuPage : Page
+    public partial class MenuWindow : Window
     {
-        public MainMenuPage()
+        public MenuWindow()
         {
             InitializeComponent();
         }
 
         private void btnManagement_Click(object sender, RoutedEventArgs e)
         {
-            this.Content = new ManagementPage();
+            ManagementWindow managementWindow = new ManagementWindow();
+            managementWindow.Show();
+            Hide();
         }
 
         private void btnOverview_Click(object sender, RoutedEventArgs e)
         {
-            this.Content = new OverviewPage();
+            OverviewWindow overviewWindow = new OverviewWindow();
+            overviewWindow.Show();
+            Hide();
         }
 
         private void btnOrder_Click(object sender, RoutedEventArgs e)
         {
-            this.Content = new OrderPage();
+            OrderWindow orderWindow = new OrderWindow();
+            orderWindow.Show();
+            Hide();
         }
     }
 }

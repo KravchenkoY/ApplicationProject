@@ -10,5 +10,6 @@ namespace ProductManager.Repository.Models
     {
         public int Id { get; set; }
         public string Name { get; set; }
+        public List<Partner> Partners { get; set;}
     }
 }
