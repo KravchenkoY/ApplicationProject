@@ -1,0 +1,35 @@
+﻿<Window x:Class="ProductManager.Windows.AddProductWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        xmlns:local="clr-namespace:ProductManager.Windows"
+        mc:Ignorable="d"
+        Title="AddProductWindow" Height="450" Width="800">
+    <Grid Background="#FFF7FF">
+        <StackPanel Orientation="Horizontal" Margin="10">
+            <StackPanel Width="350" >
+                <Label Content="Name:" Target="{Binding ElementName=txtBoxName}" FontSize="14" ></Label>
+                <TextBox Name ="txtBoxName" Style="{StaticResource MaterialDesignFloatingHintTextBox}"></TextBox>
+                <Label Content="Price:" Target="{Binding ElementName=txtBoxPrice}" FontSize="14" ></Label>
+                <TextBox Name ="txtBoxPrice" Style="{StaticResource MaterialDesignFloatingHintTextBox}"></TextBox>
+                <Label Content="Quantity:" Target="{Binding ElementName=txtBoxQuantity}" FontSize="14" ></Label>
+                <TextBox Name ="txtBoxQuantity" Style="{StaticResource MaterialDesignFloatingHintTextBox}"></TextBox>
+                <Label Content="Brand:" Target="{Binding ElementName=txtBoxBrand}" FontSize="14" ></Label>
+                <TextBox Name ="txtBoxBrand" Style="{StaticResource MaterialDesignFloatingHintTextBox}"></TextBox>
+                <Label Content="Product Type:" Target="{Binding ElementName=txtBoxPrType}" FontSize="14" ></Label>
+                <TextBox Name ="txtBoxPrType" Style="{StaticResource MaterialDesignFloatingHintTextBox}"></TextBox>
+                
+                <Button Width="120" Height="30" Style="{StaticResource MaterialDesignRaisedButton}"
+                                    materialDesign:ButtonAssist.CornerRadius="8" BorderThickness="2" BorderBrush="Violet" 
+                                    Background="Lavender" Foreground="Black" ToolTip="SubmitProduct" x:Name="btnSubmitProduct" 
+                                    Click="btnSubmitProduct_Click" Content="Submit" Margin="10,35,10,10">
+                </Button>
+                
+            </StackPanel>
+            
+        </StackPanel>
+        
+    </Grid>
+</Window>

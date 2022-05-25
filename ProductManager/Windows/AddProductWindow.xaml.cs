@@ -15,20 +15,18 @@ using System.Windows.Shapes;
 namespace ProductManager.Windows
 {
     /// <summary>
-    /// Interaction logic for ProductsWindow.xaml
+    /// Interaction logic for AddProductWindow.xaml
     /// </summary>
-    public partial class ProductsWindow : Window
+    public partial class AddProductWindow : Window
     {
-        public ProductsWindow()
+        public AddProductWindow()
         {
             InitializeComponent();
         }
 
-        private void btnAddProduct_Click(object sender, RoutedEventArgs e)
+        private void btnSubmitProduct_Click(object sender, RoutedEventArgs e)
         {
-            AddProductWindow addProductWindow = new AddProductWindow();
-            addProductWindow.Show();
-            Hide();
+
         }
     }
 }
