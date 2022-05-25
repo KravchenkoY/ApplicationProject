@@ -26,7 +26,9 @@ namespace ProductManager.Windows
 
         private void btnProducts_Click(object sender, RoutedEventArgs e)
         {
-
+            ProductsWindow productsWindow = new ProductsWindow();
+            productsWindow.Show();
+            Hide();
         }
 
         private void btnPartners_Click(object sender, RoutedEventArgs e)
