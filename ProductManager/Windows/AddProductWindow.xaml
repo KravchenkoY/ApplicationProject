@@ -18,8 +18,8 @@
                 <TextBox Name ="txtBoxQuantity" Style="{StaticResource MaterialDesignFloatingHintTextBox}"></TextBox>
                 <Label Content="Brand:" Target="{Binding ElementName=txtBoxBrand}" FontSize="14" ></Label>
                 <TextBox Name ="txtBoxBrand" Style="{StaticResource MaterialDesignFloatingHintTextBox}"></TextBox>
-                <Label Content="Product Type:" Target="{Binding ElementName=txtBoxPrType}" FontSize="14" ></Label>
-                <TextBox Name ="txtBoxPrType" Style="{StaticResource MaterialDesignFloatingHintTextBox}"></TextBox>
+                <Label Content="Product Type:" Target="{Binding ElementName=txtBoxProductType}" FontSize="14" ></Label>
+                <TextBox Name ="txtBoxProductType" Style="{StaticResource MaterialDesignFloatingHintTextBox}"></TextBox>
                 
                 <Button Width="120" Height="30" Style="{StaticResource MaterialDesignRaisedButton}"
                                     materialDesign:ButtonAssist.CornerRadius="8" BorderThickness="2" BorderBrush="Violet" 

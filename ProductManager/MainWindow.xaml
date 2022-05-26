@@ -39,7 +39,7 @@
                 </StackPanel>
                 <StackPanel Width="100">
                     <Button Margin="10 20" Style="{StaticResource MaterialDesignFloatingActionButton}" Background="{x:Null}"
-                            ToolTip="Close" x:Name="btnExit" Click="btnExit_Click">
+                            ToolTip="Close" x:Name="btnExit" Click="btnExit_Click" BorderBrush="#FFF2210B" Width="48" Height="48">
                         <materialDesign:PackIcon Kind="Close" Foreground="Black" Width="30" Height="30"/>
                     </Button>
                 </StackPanel>
