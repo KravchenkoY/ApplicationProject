@@ -38,7 +38,9 @@ namespace ProductManager.Windows
 
         private void btnUsers_Click(object sender, RoutedEventArgs e)
         {
-
+            UsersWindow usersWindow = new UsersWindow();
+            usersWindow.Show();
+            Hide();
         }
 
         private void btnOrders_Click(object sender, RoutedEventArgs e)

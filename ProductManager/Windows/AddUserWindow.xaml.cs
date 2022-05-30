@@ -17,37 +17,46 @@ using System.Windows.Shapes;
 namespace ProductManager.Windows
 {
     /// <summary>
-    /// Interaction logic for AddProductWindow.xaml
+    /// Interaction logic for AddUserWindow.xaml
     /// </summary>
-    public partial class AddProductWindow : Window
+    public partial class AddUserWindow : Window
     {
-        public AddProductWindow()
+        public AddUserWindow()
         {
             InitializeComponent();
+
+            using var context = new ProductManagerContext();
+            var roles = context.UserRoles.ToList();
+            comboBoxUserRole.DataContext = roles;
         }
 
         private void btnSubmitProduct_Click(object sender, RoutedEventArgs e)
         {
-            var product = new Product 
-            { 
+            var user = new User
+            {
                 Name = txtBoxName.Text,
-                Price = Convert.ToDouble(txtBoxPrice.Text),
-                Quantity = Convert.ToInt32(txtBoxQuantity.Text),
-                Brand = txtBoxBrand.Text,
-                ProductType = txtBoxProductType.Text,
+                LastName = txtBoxLastName.Text,
+                Password = txtBoxPassword.Text,
+                Email = txtBoxEmail.Text,
+                UserRoleId = (int)comboBoxUserRole.SelectedValue
             };
-            
             using var context = new ProductManagerContext();
-            context.Products.Add(product);
+            context.Users.Add(user);
             context.SaveChanges();
-
+            MessageBox.Show("User has been added", "Success", MessageBoxButton.OK, MessageBoxImage.Information);
+            GoBack();
         }
 
-        private void btnCancel_Click(object sender, RoutedEventArgs e)
+        private void GoBack()
         {
             ManagementWindow managementWindow = new ManagementWindow();
             managementWindow.Show();
             Hide();
+        }
+
+        private void btnCancel_Click(object sender, RoutedEventArgs e)
+        {
+            GoBack();
         }
     }
 }

@@ -16,22 +16,22 @@ using System.Windows.Shapes;
 namespace ProductManager.Windows
 {
     /// <summary>
-    /// Interaction logic for ProductsWindow.xaml
+    /// Interaction logic for UsersWindow.xaml
     /// </summary>
-    public partial class ProductsWindow : Window
+    public partial class UsersWindow : Window
     {
-        public ProductsWindow()
+        public UsersWindow()
         {
             InitializeComponent();
             using var context = new ProductManagerContext();
-            var products = context.Products.ToList();
-            productGrid.ItemsSource = products;
+            var users = context.Users.ToList();
+            userGrid.ItemsSource = users;
         }
 
         private void btnAddProduct_Click(object sender, RoutedEventArgs e)
         {
-            AddProductWindow addProductWindow = new AddProductWindow();
-            addProductWindow.Show();
+            AddUserWindow addUserWindow = new AddUserWindow();
+            addUserWindow.Show();
             Hide();
         }
 

@@ -55,7 +55,6 @@ namespace ProductManager
             }
             else
             {
-                MessageBox.Show("Successful login", "Success", MessageBoxButton.OK, MessageBoxImage.Information);
                 Windows.MenuWindow menuWindow = new Windows.MenuWindow();
                 menuWindow.Show();
                 Hide();
