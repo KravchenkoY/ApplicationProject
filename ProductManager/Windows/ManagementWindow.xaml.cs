@@ -33,7 +33,9 @@ namespace ProductManager.Windows
 
         private void btnPartners_Click(object sender, RoutedEventArgs e)
         {
-
+            PartnersWindow partnersWindow = new PartnersWindow();
+            partnersWindow.Show();
+            Hide();
         }
 
         private void btnUsers_Click(object sender, RoutedEventArgs e)
@@ -46,6 +48,13 @@ namespace ProductManager.Windows
         private void btnOrders_Click(object sender, RoutedEventArgs e)
         {
 
+        }
+
+        private void btnBack_Click(object sender, RoutedEventArgs e)
+        {
+            MenuWindow menuWindow = new MenuWindow();
+            menuWindow.Show();
+            Hide();
         }
     }
 }

@@ -6,7 +6,7 @@
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         xmlns:local="clr-namespace:ProductManager.Windows"
         mc:Ignorable="d"
-        Title="MenuWindow" Height="460" Width="800">
+        Title="MenuWindow" Height="470" Width="800">
     <Grid>
         <Grid.Background>
             <LinearGradientBrush StartPoint="0.1,0" EndPoint="0.9,1">
@@ -39,6 +39,14 @@
                         </StackPanel>
 
                     </StackPanel>
+
+                </StackPanel>
+                <StackPanel Width="100">
+                    <Button Margin="10" Style="{StaticResource MaterialDesignRaisedButton}"
+                                    materialDesign:ButtonAssist.CornerRadius="8" BorderThickness="2" BorderBrush="Violet" 
+                                    Background="Lavender" Foreground="Black" ToolTip="LogOut" x:Name="btnLogOut" 
+                                    Click="btnBack_Click" Content="Log out" Height="30" Width="80">
+                    </Button>
 
                 </StackPanel>
 
