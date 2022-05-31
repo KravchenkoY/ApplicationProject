@@ -45,8 +45,8 @@ namespace ProductManager.Windows
 
         private void btnCancel_Click(object sender, RoutedEventArgs e)
         {
-            ManagementWindow managementWindow = new ManagementWindow();
-            managementWindow.Show();
+            ProductsWindow productsWindow = new ProductsWindow();
+            productsWindow.Show();
             Hide();
         }
     }

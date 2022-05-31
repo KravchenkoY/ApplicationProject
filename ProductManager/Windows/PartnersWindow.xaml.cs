@@ -24,13 +24,15 @@ namespace ProductManager.Windows
         {
             InitializeComponent();
             using var context = new ProductManagerContext();
-            var partners = context.Partners.Tolist();
+            var partners = context.Partners.ToList();
             partnerGrid.ItemsSource = partners;
         }
 
         private void btnAddPartner_Click(object sender, RoutedEventArgs e)
         {
-
+            AddPartnerWindow addPartnerWindow = new AddPartnerWindow();
+            addPartnerWindow.Show();
+            Hide();
         }
 
         private void btnBack_Click(object sender, RoutedEventArgs e)

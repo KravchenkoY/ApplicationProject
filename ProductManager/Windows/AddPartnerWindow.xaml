@@ -1,0 +1,50 @@
+﻿<Window x:Class="ProductManager.Windows.AddPartnerWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        xmlns:local="clr-namespace:ProductManager.Windows"
+        mc:Ignorable="d"
+        Title="AddPartnerWindow" Height="560" Width="800">
+    <Grid Background="#FFF7FF">
+        <StackPanel Orientation="Horizontal" Margin="10">
+            <StackPanel Width="350"  >
+                <Label Content="Name:" Target="{Binding ElementName=txtBoxName}" FontSize="14" ></Label>
+                <TextBox Name ="txtBoxName"></TextBox>
+                <Label Content="Last Name/Contact:" Target="{Binding ElementName=txtBoxLastName}" FontSize="14" ></Label>
+                <TextBox Name ="txtBoxLastName"></TextBox>
+                <Label Content="Phone:" Target="{Binding ElementName=txtBoxPhone}" FontSize="14" ></Label>
+                <TextBox Name ="txtBoxPhone"></TextBox>
+                <Label Content="Address:" Target="{Binding ElementName=txtBoxAddress}" FontSize="14" ></Label>
+                <TextBox Name ="txtBoxAddress"></TextBox>
+                <Label Content="City:" Target="{Binding ElementName=txtBoxCity}" FontSize="14" ></Label>
+                <TextBox Name ="txtBoxCity"></TextBox>
+                <Label Content="Postal Code:" Target="{Binding ElementName=txtBoxPostalCode}" FontSize="14" ></Label>
+                <TextBox Name ="txtBoxPostalCode" ></TextBox>
+                <Label Content="Country:" Target="{Binding ElementName=txtBoxCountry}" FontSize="14" ></Label>
+                <TextBox Name ="txtBoxCountry" ></TextBox>
+                <Label Content="Type:" Target="{Binding ElementName=txtBoxRole}" FontSize="14" ></Label>
+                <ComboBox Name ="comboBoxPartnerType"
+                          ItemsSource="{Binding}"
+                          SelectedValuePath="Id"
+                          DisplayMemberPath="Name" />
+
+
+                <Button Width="120" Height="30" Style="{StaticResource MaterialDesignRaisedButton}"
+                                    materialDesign:ButtonAssist.CornerRadius="8" BorderThickness="2" BorderBrush="Violet" 
+                                    Background="Lavender" Foreground="Black" ToolTip="SubmitProduct" x:Name="btnSubmitProduct" 
+                                    Click="btnSubmitProduct_Click" Content="Submit" Margin="0,15,0,0" >
+                </Button>
+                <Button Width="120" Height="30" Style="{StaticResource MaterialDesignRaisedButton}"
+                                    materialDesign:ButtonAssist.CornerRadius="8" BorderThickness="2" BorderBrush="Violet" 
+                                    Background="Lavender" Foreground="Black" ToolTip="Cancel" x:Name="btnCancel" 
+                                    Click="btnCancel_Click" Content="Cancel" Margin="0,10,0,0" >
+                </Button>
+
+            </StackPanel>
+
+        </StackPanel>
+
+    </Grid>
+</Window>

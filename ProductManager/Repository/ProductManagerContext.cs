@@ -10,6 +10,8 @@ namespace ProductManager.Repository
         public DbSet<Product> Products { get; set; }
 
         public DbSet<UserRole> UserRoles { get; set; }
+        public DbSet<Partner> Partners { get; set; }
+        public DbSet<PartnerType> PartnerTypes { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

@@ -17,46 +17,47 @@ using System.Windows.Shapes;
 namespace ProductManager.Windows
 {
     /// <summary>
-    /// Interaction logic for AddUserWindow.xaml
+    /// Interaction logic for AddPartnerWindow.xaml
     /// </summary>
-    public partial class AddUserWindow : Window
+    public partial class AddPartnerWindow : Window
     {
-        public AddUserWindow()
+        public AddPartnerWindow()
         {
             InitializeComponent();
-
             using var context = new ProductManagerContext();
-            var roles = context.UserRoles.ToList();
-            comboBoxUserRole.DataContext = roles;
+            var types = context.PartnerTypes.ToList();
+            comboBoxPartnerType.DataContext = types;
         }
 
         private void btnSubmitProduct_Click(object sender, RoutedEventArgs e)
         {
-            var user = new User
+            var partner = new Partner
             {
                 Name = txtBoxName.Text,
                 LastName = txtBoxLastName.Text,
-                Password = txtBoxPassword.Text,
-                Email = txtBoxEmail.Text,
-                UserRoleId = (int)comboBoxUserRole.SelectedValue
+                Phone = txtBoxPhone.Text,
+                Address = txtBoxAddress.Text,
+                City = txtBoxCity.Text,
+                PostalCode = txtBoxPostalCode.Text,
+                Country = txtBoxCountry.Text,
+                PartnerTypeId = (int)comboBoxPartnerType.SelectedValue
             };
             using var context = new ProductManagerContext();
-            context.Users.Add(user);
+            context.Partners.Add(partner);
             context.SaveChanges();
-            MessageBox.Show("User has been added", "Success", MessageBoxButton.OK, MessageBoxImage.Information);
+            MessageBox.Show("Partner has been added", "Success", MessageBoxButton.OK, MessageBoxImage.Information);
             GoBack();
-        }
-
-        private void GoBack()
-        {
-            UsersWindow usersWindow = new UsersWindow();
-            usersWindow.Show();
-            Hide();
         }
 
         private void btnCancel_Click(object sender, RoutedEventArgs e)
         {
             GoBack();
+        }
+        private void GoBack()
+        {
+            PartnersWindow partnersWindow = new PartnersWindow();
+            partnersWindow.Show();
+            Hide();
         }
     }
 }
