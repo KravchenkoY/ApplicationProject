@@ -1,4 +1,6 @@
-﻿using ProductManager.Repository;
+﻿using Microsoft.EntityFrameworkCore;
+using ProductManager.Extensions;
+using ProductManager.Repository;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -24,8 +26,8 @@ namespace ProductManager.Windows
         {
             InitializeComponent();
             using var context = new ProductManagerContext();
-            var partners = context.Partners.ToList();
-            partnerGrid.ItemsSource = partners;
+            var partners = context.Partners.Include(x=>x.PartnerType).ToList();
+            partnerGrid.ItemsSource = partners.ToViewModelList();
         }
 
         private void btnAddPartner_Click(object sender, RoutedEventArgs e)
