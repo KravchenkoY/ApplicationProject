@@ -1,4 +1,6 @@
-﻿using ProductManager.Repository;
+﻿using Microsoft.EntityFrameworkCore;
+using ProductManager.Extensions;
+using ProductManager.Repository;
 using System.Linq;
 using System.Windows;
 
@@ -13,8 +15,8 @@ namespace ProductManager.Windows
         {
             InitializeComponent();
             using var context = new ProductManagerContext();
-            var users = context.Users.ToList();
-            userGrid.ItemsSource = users;
+            var users = context.Users.Include(x=>x.UserRole).ToList();
+            userGrid.ItemsSource = users.ToViewModelList();
         }
 
         private void btnAddProduct_Click(object sender, RoutedEventArgs e)
