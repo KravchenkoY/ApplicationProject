@@ -1,4 +1,5 @@
-﻿using ProductManager.Repository;
+﻿using Microsoft.EntityFrameworkCore;
+using ProductManager.Repository;
 using ProductManager.Repository.Models;
 using System;
 using System.Collections.Generic;
@@ -24,6 +25,12 @@ namespace ProductManager.Windows
         public AddProductWindow()
         {
             InitializeComponent();
+            using var context = new ProductManagerContext();
+            var suppliers = context.Partners
+                .Where(x => x.PartnerTypeId == (int)PartnerTypeEnum.Supplier)
+                .Select(x => new { x.Id, x.Name })
+                .ToList();
+            comboBoxSupplier.ItemsSource = suppliers;
         }
 
         private void btnSubmitProduct_Click(object sender, RoutedEventArgs e)

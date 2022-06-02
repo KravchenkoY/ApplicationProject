@@ -14,7 +14,8 @@ namespace ProductManager.Repository.Models
         public int Quantity { get; set; }
         public string Brand { get; set; }
         public string ProductType { get; set; }
-
+        public int PartnerId { get; set; }
+        public Partner Partner { get; set; }
 
     }
 }

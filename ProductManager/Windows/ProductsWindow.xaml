@@ -9,23 +9,38 @@
         Title="ProductsWindow" Height="450" Width="800">
     <Grid Background="#FFF7FF" >
         <StackPanel Orientation="Horizontal" Margin="10">
-            <StackPanel Width="350" Height="50" VerticalAlignment="Top">
-                <Button Width="120" Height="30" Style="{StaticResource MaterialDesignRaisedButton}"
+            <StackPanel Width="160" Height="50" VerticalAlignment="Top">
+                <Button Width="140" Height="30" Style="{StaticResource MaterialDesignRaisedButton}"
                                     materialDesign:ButtonAssist.CornerRadius="8" BorderThickness="2" BorderBrush="Violet" 
                                     Background="Lavender" Foreground="Black" ToolTip="AddProduct" x:Name="btnAddProduct" 
                                     Click="btnAddProduct_Click" Content="Add product" HorizontalAlignment="Left" Margin="10">
                 </Button>
+                
+                
             </StackPanel>
-            <StackPanel Width="420" Height="50" VerticalAlignment="Top" >
+            <StackPanel Width="160" Height="50" VerticalAlignment="Top">
+                <Button Width="140" Height="30" Style="{StaticResource MaterialDesignRaisedButton}"
+                                    materialDesign:ButtonAssist.CornerRadius="8" BorderThickness="2" BorderBrush="Violet" 
+                                    Background="Lavender" Foreground="Black" ToolTip="ImportTemplate" x:Name="btnImportTemplate" 
+                                    Click="btnImportTemplate_Click" Content="Import template" HorizontalAlignment="Left" Margin="10">
+                </Button>
+            </StackPanel>
+            <StackPanel Width="160" Height="50" VerticalAlignment="Top">
+                <Button Width="140" Height="30" Style="{StaticResource MaterialDesignRaisedButton}"
+                                    materialDesign:ButtonAssist.CornerRadius="8" BorderThickness="2" BorderBrush="Violet" 
+                                    Background="Lavender" Foreground="Black" ToolTip="Template" x:Name="btnTemplate" 
+                                    Click="btnTemplate_Click" Content="Template" HorizontalAlignment="Left" Margin="10" >
+                </Button>
+            </StackPanel>
+            <StackPanel Width="270" Height="50" VerticalAlignment="Top" >
                 <Button Width="120" Height="30" Style="{StaticResource MaterialDesignRaisedButton}"
                                     materialDesign:ButtonAssist.CornerRadius="8" BorderThickness="2" BorderBrush="Violet" 
                                     Background="Lavender" Foreground="Black" ToolTip="Back" x:Name="btnBack" 
                                     Click="btnBack_Click" Content="Back" HorizontalAlignment="Right" Margin="10">
-                    
                 </Button>
             </StackPanel>
         </StackPanel>
-        <StackPanel Margin="0,60,0,0">
+        <StackPanel Margin="0,70,0,0">
             <DataGrid Name="productGrid" Style="{StaticResource MaterialDesignDataGrid}">
                 
             </DataGrid>

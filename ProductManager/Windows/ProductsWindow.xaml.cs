@@ -41,5 +41,15 @@ namespace ProductManager.Windows
             managementWindow.Show();
             Hide();
         }
+
+        private void btnImportTemplate_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void btnTemplate_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

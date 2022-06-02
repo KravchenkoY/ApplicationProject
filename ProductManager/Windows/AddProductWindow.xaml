@@ -11,15 +11,19 @@
         <StackPanel Orientation="Horizontal" Margin="10">
             <StackPanel Width="350"  >
                 <Label Content="Name:" Target="{Binding ElementName=txtBoxName}" FontSize="14" ></Label>
-                <TextBox Name ="txtBoxName" Style="{StaticResource MaterialDesignFloatingHintTextBox}"></TextBox>
+                <TextBox Name ="txtBoxName"></TextBox>
                 <Label Content="Price:" Target="{Binding ElementName=txtBoxPrice}" FontSize="14" ></Label>
-                <TextBox Name ="txtBoxPrice" Style="{StaticResource MaterialDesignFloatingHintTextBox}"></TextBox>
+                <TextBox Name ="txtBoxPrice"></TextBox>
                 <Label Content="Quantity:" Target="{Binding ElementName=txtBoxQuantity}" FontSize="14" ></Label>
-                <TextBox Name ="txtBoxQuantity" Style="{StaticResource MaterialDesignFloatingHintTextBox}"></TextBox>
+                <TextBox Name ="txtBoxQuantity"></TextBox>
                 <Label Content="Brand:" Target="{Binding ElementName=txtBoxBrand}" FontSize="14" ></Label>
-                <TextBox Name ="txtBoxBrand" Style="{StaticResource MaterialDesignFloatingHintTextBox}"></TextBox>
+                <TextBox Name ="txtBoxBrand"></TextBox>
                 <Label Content="Product Type:" Target="{Binding ElementName=txtBoxProductType}" FontSize="14" ></Label>
-                <TextBox Name ="txtBoxProductType" Style="{StaticResource MaterialDesignFloatingHintTextBox}"></TextBox>
+                <TextBox Name ="txtBoxProductType"></TextBox>
+                <Label Content="Supplier" Target="{Binding ElementName=comboBoxSupplier}" FontSize="14"></Label>
+                <ComboBox Name="comboBoxSupplier" ItemsSource="{Binding}"
+                          SelectedValuePath="Id"
+                          DisplayMemberPath="Name"></ComboBox>
                 
                 <Button Width="120" Height="30" Style="{StaticResource MaterialDesignRaisedButton}"
                                     materialDesign:ButtonAssist.CornerRadius="8" BorderThickness="2" BorderBrush="Violet" 

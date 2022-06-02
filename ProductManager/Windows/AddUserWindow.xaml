@@ -19,7 +19,7 @@
                 <Label Content="Email:" Target="{Binding ElementName=txtBoxEmail}" FontSize="14" ></Label>
                 <TextBox Name ="txtBoxEmail" Style="{StaticResource MaterialDesignFloatingHintTextBox}"></TextBox>
                 <Label Content="Role:" Target="{Binding ElementName=txtBoxRole}" FontSize="14" ></Label>
-                <ComboBox Name ="comboBoxUserRole"  Style="{StaticResource MaterialDesignFloatingHintComboBox}" 
+                <ComboBox Name ="comboBoxUserRole"
                           ItemsSource="{Binding}"
                           SelectedValuePath="Id"
                           DisplayMemberPath="Name" />
