@@ -11,8 +11,8 @@ using ProductManager.Repository;
 namespace ProductManager.Migrations
 {
     [DbContext(typeof(ProductManagerContext))]
-    [Migration("20220525143638_addproducts")]
-    partial class addproducts
+    [Migration("20220602124944_initial")]
+    partial class initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -66,7 +66,7 @@ namespace ProductManager.Migrations
 
                     b.HasIndex("PartnerTypeId");
 
-                    b.ToTable("Partner");
+                    b.ToTable("Partners");
                 });
 
             modelBuilder.Entity("ProductManager.Repository.Models.PartnerType", b =>
@@ -83,7 +83,7 @@ namespace ProductManager.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("PartnerType");
+                    b.ToTable("PartnerTypes");
 
                     b.HasData(
                         new
@@ -114,6 +114,9 @@ namespace ProductManager.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<int>("PartnerId")
+                        .HasColumnType("int");
+
                     b.Property<double>("Price")
                         .HasColumnType("float");
 
@@ -125,6 +128,8 @@ namespace ProductManager.Migrations
                         .HasColumnType("int");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("PartnerId");
 
                     b.ToTable("Products");
                 });
@@ -237,6 +242,17 @@ namespace ProductManager.Migrations
                     b.Navigation("PartnerType");
                 });
 
+            modelBuilder.Entity("ProductManager.Repository.Models.Product", b =>
+                {
+                    b.HasOne("ProductManager.Repository.Models.Partner", "Partner")
+                        .WithMany("Products")
+                        .HasForeignKey("PartnerId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Partner");
+                });
+
             modelBuilder.Entity("ProductManager.Repository.Models.User", b =>
                 {
                     b.HasOne("ProductManager.Repository.Models.UserRole", "UserRole")
@@ -246,6 +262,11 @@ namespace ProductManager.Migrations
                         .IsRequired();
 
                     b.Navigation("UserRole");
+                });
+
+            modelBuilder.Entity("ProductManager.Repository.Models.Partner", b =>
+                {
+                    b.Navigation("Products");
                 });
 
             modelBuilder.Entity("ProductManager.Repository.Models.PartnerType", b =>

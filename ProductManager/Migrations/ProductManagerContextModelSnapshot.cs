@@ -2,7 +2,6 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
-using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using ProductManager.Repository;
 
@@ -11,10 +10,9 @@ using ProductManager.Repository;
 namespace ProductManager.Migrations
 {
     [DbContext(typeof(ProductManagerContext))]
-    [Migration("20220525100051_addmodels")]
-    partial class addmodels
+    partial class ProductManagerContextModelSnapshot : ModelSnapshot
     {
-        protected override void BuildTargetModel(ModelBuilder modelBuilder)
+        protected override void BuildModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -66,7 +64,7 @@ namespace ProductManager.Migrations
 
                     b.HasIndex("PartnerTypeId");
 
-                    b.ToTable("Partner");
+                    b.ToTable("Partners");
                 });
 
             modelBuilder.Entity("ProductManager.Repository.Models.PartnerType", b =>
@@ -83,7 +81,7 @@ namespace ProductManager.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("PartnerType");
+                    b.ToTable("PartnerTypes");
 
                     b.HasData(
                         new
@@ -96,6 +94,42 @@ namespace ProductManager.Migrations
                             Id = 2,
                             Name = "Customer"
                         });
+                });
+
+            modelBuilder.Entity("ProductManager.Repository.Models.Product", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<string>("Brand")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("PartnerId")
+                        .HasColumnType("int");
+
+                    b.Property<double>("Price")
+                        .HasColumnType("float");
+
+                    b.Property<string>("ProductType")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("Quantity")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("PartnerId");
+
+                    b.ToTable("Products");
                 });
 
             modelBuilder.Entity("ProductManager.Repository.Models.User", b =>
@@ -206,6 +240,17 @@ namespace ProductManager.Migrations
                     b.Navigation("PartnerType");
                 });
 
+            modelBuilder.Entity("ProductManager.Repository.Models.Product", b =>
+                {
+                    b.HasOne("ProductManager.Repository.Models.Partner", "Partner")
+                        .WithMany("Products")
+                        .HasForeignKey("PartnerId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Partner");
+                });
+
             modelBuilder.Entity("ProductManager.Repository.Models.User", b =>
                 {
                     b.HasOne("ProductManager.Repository.Models.UserRole", "UserRole")
@@ -215,6 +260,11 @@ namespace ProductManager.Migrations
                         .IsRequired();
 
                     b.Navigation("UserRole");
+                });
+
+            modelBuilder.Entity("ProductManager.Repository.Models.Partner", b =>
+                {
+                    b.Navigation("Products");
                 });
 
             modelBuilder.Entity("ProductManager.Repository.Models.PartnerType", b =>

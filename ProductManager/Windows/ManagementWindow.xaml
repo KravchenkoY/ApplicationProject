@@ -19,7 +19,7 @@
                 <StackPanel Width="350">
                     <Image Source="../Images/menu.png" Width="300" Height="300" VerticalAlignment="Top" Margin="30" Stretch="Fill" Visibility="Visible" />
                 </StackPanel>
-                <StackPanel Width="350">
+                <StackPanel Width="340">
                     <StackPanel Margin="20 40">
                         <TextBlock Text="Data Management" Margin="20" Foreground="Black" TextAlignment="Center" FontSize="30"></TextBlock>
                         <StackPanel Margin="10" HorizontalAlignment="Center">

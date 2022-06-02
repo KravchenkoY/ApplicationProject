@@ -24,5 +24,14 @@ namespace ProductManager.Extensions
             }
             return userList;
         }
+        internal static List<ProductViewModel> ToViewModelList(this List<Product> input)
+        {
+            var productList = new List<ProductViewModel>();
+            foreach (var product in input)
+            {
+                productList.Add(product.ToViewModel());
+            }
+            return productList;
+        }
     }
 }

@@ -42,6 +42,7 @@ namespace ProductManager.Windows
                 Quantity = Convert.ToInt32(txtBoxQuantity.Text),
                 Brand = txtBoxBrand.Text,
                 ProductType = txtBoxProductType.Text,
+                PartnerId = (int)comboBoxSupplier.SelectedValue
             };
             
             using var context = new ProductManagerContext();
