@@ -6,8 +6,40 @@
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         xmlns:local="clr-namespace:ProductManager.Windows"
         mc:Ignorable="d"
-        Title="OrderWindow" Height="450" Width="800">
+        Title="OrderWindow" Height="450" Width="800" WindowStartupLocation="CenterScreen">
     <Grid Background="#FFF7FF">
-        
+        <StackPanel Orientation="Horizontal" Margin="10">
+            <StackPanel Width="160" Height="60" VerticalAlignment="Top">
+                <Label Content="Customer:" Target="{Binding ElementName=txtBoxRCustomer}" FontSize="14" ></Label>
+                <ComboBox Name ="comboBoxCustomer"
+                          ItemsSource="{Binding}"
+                          SelectedValuePath="Id"
+                          DisplayMemberPath="Name" />
+            </StackPanel>
+            <StackPanel Width="160" Height="60" VerticalAlignment="Top" Margin="10,0,0,0">
+                <Label Content="Order date:" Target="{Binding ElementName=orderDatePicker}" FontSize="14" ></Label>
+                <DatePicker Name="orderDatePicker" Background="#FFF7FF">
+                </DatePicker>
+            </StackPanel>
+            <StackPanel Width="160" Height="60" VerticalAlignment="Top" Margin="10,0,0,0">
+                <Button Width="120" Height="30" Style="{StaticResource MaterialDesignRaisedButton}"
+                                    materialDesign:ButtonAssist.CornerRadius="8" BorderThickness="2" BorderBrush="Violet" 
+                                    Background="Lavender" Foreground="Black" ToolTip="AddProduct" x:Name="btnAddProduct" 
+                                    Click="btnAddProduct_Click" Content="Add product" Margin="10">
+                </Button>
+            </StackPanel>
+            <StackPanel Width="270" Height="50" VerticalAlignment="Top" >
+                <Button Width="120" Height="30" Style="{StaticResource MaterialDesignRaisedButton}"
+                                    materialDesign:ButtonAssist.CornerRadius="8" BorderThickness="2" BorderBrush="Violet" 
+                                    Background="Lavender" Foreground="Black" ToolTip="Back" x:Name="btnBack" 
+                                    Click="btnBack_Click" Content="Back" HorizontalAlignment="Right" Margin="10">
+                </Button>
+            </StackPanel>
+        </StackPanel>
+        <StackPanel Margin="0,80,0,0">
+            <DataGrid Name="orderGrid" Style="{StaticResource MaterialDesignDataGrid}" Background="#FFF7FF">
+
+            </DataGrid>
+        </StackPanel>
     </Grid>
 </Window>

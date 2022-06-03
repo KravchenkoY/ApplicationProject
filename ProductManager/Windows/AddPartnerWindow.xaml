@@ -6,7 +6,7 @@
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         xmlns:local="clr-namespace:ProductManager.Windows"
         mc:Ignorable="d"
-        Title="AddPartnerWindow" Height="560" Width="800">
+        Title="AddPartnerWindow" Height="560" Width="800" WindowStartupLocation="CenterScreen">
     <Grid Background="#FFF7FF">
         <StackPanel Orientation="Horizontal" Margin="10">
             <StackPanel Width="350"  >

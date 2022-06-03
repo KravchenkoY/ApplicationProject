@@ -1,4 +1,6 @@
-﻿using System;
+﻿using ProductManager.Repository;
+using ProductManager.Repository.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -22,6 +24,21 @@ namespace ProductManager.Windows
         public OrderWindow()
         {
             InitializeComponent();
+            using var context = new ProductManagerContext();
+            var customers = context.Partners.Where(x=>x .PartnerTypeId == (int)PartnerTypeEnum.Customer).Select(x => new {x.Id, Name =$"{x.Name} {x.LastName}"}).ToList();
+            comboBoxCustomer.ItemsSource = customers;
+        }
+
+        private void btnBack_Click(object sender, RoutedEventArgs e)
+        {
+            MenuWindow menuWindow = new MenuWindow();
+            menuWindow.Show();
+            Hide();
+        }
+
+        private void btnAddProduct_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

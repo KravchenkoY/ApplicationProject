@@ -45,11 +45,6 @@ namespace ProductManager.Windows
             Hide();
         }
 
-        private void btnOrders_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
         private void btnBack_Click(object sender, RoutedEventArgs e)
         {
             MenuWindow menuWindow = new MenuWindow();

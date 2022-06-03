@@ -6,7 +6,7 @@
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         xmlns:local="clr-namespace:ProductManager.Windows"
         mc:Ignorable="d"
-        Title="ProductsWindow" Height="450" Width="800">
+        Title="ProductsWindow" Height="450" Width="800" WindowStartupLocation="CenterScreen">
     <Grid Background="#FFF7FF" >
         <StackPanel Orientation="Horizontal" Margin="10">
             <StackPanel Width="160" Height="50" VerticalAlignment="Top">
@@ -41,7 +41,7 @@
             </StackPanel>
         </StackPanel>
         <StackPanel Margin="0,70,0,0">
-            <DataGrid Name="productGrid" Style="{StaticResource MaterialDesignDataGrid}">
+            <DataGrid Name="productGrid" Style="{StaticResource MaterialDesignDataGrid}" Background="#FFF7FF">
                 
             </DataGrid>
         </StackPanel>
