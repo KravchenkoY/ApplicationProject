@@ -21,5 +21,7 @@ namespace ProductManager.Repository.Models
         public int PartnerTypeId { get; set; }
         public PartnerType PartnerType { get; set; }
         public List<Product> Products { get; set;}
+
+        public List<OrderHeader> OrderHeaders { get; set; }
     }
 }

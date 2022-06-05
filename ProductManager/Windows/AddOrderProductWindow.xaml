@@ -9,16 +9,21 @@
         Title="AddOrderProductWindow" Height="450" Width="800" WindowStartupLocation="CenterScreen">
     <Grid Background="#FFF7FF">
         <StackPanel Orientation="Vertical" Margin="10">
-            <StackPanel Width="780" Height="350" VerticalAlignment="Top">
-                <DataGrid Background="#FFF7FF" Name="addOrderDataGrid">
+            <StackPanel Width="780" Height="320" VerticalAlignment="Top">
+                <DataGrid IsReadOnly="True" Background="#FFF7FF" Name="addOrderDataGrid">
 
                 </DataGrid>
             </StackPanel>
-            <StackPanel Height="50">
+            <StackPanel Height="90">
                 <Button Width="120" Height="30" Style="{StaticResource MaterialDesignRaisedButton}"
                                     materialDesign:ButtonAssist.CornerRadius="8" BorderThickness="2" BorderBrush="Violet" 
                                     Background="Lavender" Foreground="Black" ToolTip="Select" x:Name="btnSelect" 
                                     Click="btnSelect_Click" Content="Select" Margin="10">
+                </Button>
+                <Button Width="120" Height="30" Style="{StaticResource MaterialDesignRaisedButton}"
+                                    materialDesign:ButtonAssist.CornerRadius="8" BorderThickness="2" BorderBrush="Violet" 
+                                    Background="Lavender" Foreground="Black" ToolTip="Cancel" x:Name="btnCancel" 
+                                    Click="btnCancel_Click" Content="Cancel" >
                 </Button>
             </StackPanel>
         </StackPanel>

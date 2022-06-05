@@ -12,9 +12,18 @@ namespace ProductManager.Repository
         public DbSet<UserRole> UserRoles { get; set; }
         public DbSet<Partner> Partners { get; set; }
         public DbSet<PartnerType> PartnerTypes { get; set; }
+        public DbSet<OrderLine> OrderLines { get; set; }
+        public DbSet<OrderHeader> OrderHeaders { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            modelBuilder.Entity<OrderLine>()
+                .HasOne(e => e.Product)
+                .WithMany(x => x.OrderLines)
+                .IsRequired(true)
+                .HasForeignKey(e => e.ProductId)
+                .OnDelete(DeleteBehavior.NoAction);
+
             modelBuilder.Entity<User>().HasData(new User[]
             {
                 new User { Id = 1, Name ="Yulia", UserRoleId=1, LastName = "Kravchenko", Email = "osov0001@gmail.com", Password= "1234"},

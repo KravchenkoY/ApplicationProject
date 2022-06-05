@@ -41,5 +41,12 @@
 
             </DataGrid>
         </StackPanel>
+        <StackPanel Height="60" VerticalAlignment="Bottom">
+            <Button Width="120" Height="30" Style="{StaticResource MaterialDesignRaisedButton}"
+                                    materialDesign:ButtonAssist.CornerRadius="8" BorderThickness="2" BorderBrush="Violet" 
+                                    Background="Lavender" Foreground="Black" ToolTip="Submit" x:Name="btnSubmit" 
+                                    Click="btnSubmit_Click" Content="Submit" Margin="10">
+            </Button>
+        </StackPanel>
     </Grid>
 </Window>
