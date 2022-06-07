@@ -40,8 +40,8 @@ namespace ProductManager.Windows
 
         private void btnOrder_Click(object sender, RoutedEventArgs e)
         {
-            OrderWindow orderWindow = new OrderWindow();
-            orderWindow.Show();
+            OrdersWindow ordersWindow = new OrdersWindow();
+            ordersWindow.Show();
             Hide();
         }
 
