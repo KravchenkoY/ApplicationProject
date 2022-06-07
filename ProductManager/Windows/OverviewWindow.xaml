@@ -3,10 +3,21 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         xmlns:local="clr-namespace:ProductManager.Windows"
         mc:Ignorable="d"
-        Title="OverviewWindow" Height="450" Width="800">
-    <Grid>
-        
+        Title="OverviewWindow" Height="450" Width="800" WindowStartupLocation="CenterScreen">
+    <Grid Background="#FFF7FF">
+        <StackPanel Margin="10">
+            <Button Style="{StaticResource MaterialDesignRaisedButton}"
+                                    materialDesign:ButtonAssist.CornerRadius="8" BorderThickness="2" BorderBrush="Violet" 
+                                    Background="Lavender" Foreground="Black" ToolTip="Back" x:Name="btnBack" 
+                                    Click="btnBack_Click" Content="Back" Height="30" Width="120" HorizontalAlignment="Right" Margin="10,10,30,10"  >
+            </Button>
+            <Label Content="Seller rating" Target="{Binding ElementName=dataGrigSellerRating}" FontSize="20" FontWeight="Bold" FontFamily="Calibri"></Label>
+            <DataGrid Background="#FFF7FF" Name="dataGrigSellerRating">
+                
+            </DataGrid>
+        </StackPanel>
     </Grid>
 </Window>

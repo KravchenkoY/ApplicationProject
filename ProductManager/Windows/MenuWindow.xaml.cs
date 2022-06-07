@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.Caching;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -45,8 +46,10 @@ namespace ProductManager.Windows
             Hide();
         }
 
-        private void btnBack_Click(object sender, RoutedEventArgs e)
+        private void btnLogout_Click(object sender, RoutedEventArgs e)
         {
+            MemoryCache.Default.Remove("userId");
+            MemoryCache.Default.Remove("userRoleId");
             MainWindow mainWindow = new MainWindow();
             mainWindow.Show();
             Hide();

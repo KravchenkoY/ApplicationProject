@@ -5,6 +5,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.Caching;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -74,6 +75,7 @@ namespace ProductManager.Windows
             using var context = new ProductManagerContext();
             var order = new OrderHeader
             {
+                UserId = (int)MemoryCache.Default["userId"],
                 Date = orderDatePicker.SelectedDate.Value,
                 PartnerId = (int)comboBoxCustomer.SelectedValue,
                 OrderLines = orderlines

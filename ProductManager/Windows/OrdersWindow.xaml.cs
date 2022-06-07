@@ -28,6 +28,7 @@ namespace ProductManager.Windows
             using var context = new ProductManagerContext();
             var orders = context.OrderHeaders
                 .Include(x => x.Partner)
+                .Include(x=> x.User)
                 .Include(x => x.OrderLines)
                 .ThenInclude(x => x.Product)
                 .ToList();
@@ -41,6 +42,7 @@ namespace ProductManager.Windows
                     Id = order.Id,
                     CustomerName = $"{order.Partner.Name} {order.Partner.LastName}",
                     Date = order.Date,
+                    UserName = $"{order.User.Name} {order.User.LastName}",
                     Products = products
                 });
             }

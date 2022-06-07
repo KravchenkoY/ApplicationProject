@@ -17,6 +17,20 @@ namespace ProductManager.Repository
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            modelBuilder.Entity<OrderHeader>()
+                .HasOne(e=>e.Partner)
+                .WithMany(e=>e.OrderHeaders)
+                .IsRequired()
+                .HasForeignKey(e=>e.PartnerId)
+                .OnDelete(DeleteBehavior.NoAction);
+
+            modelBuilder.Entity<OrderHeader>()
+                .HasOne(e => e.User)
+                .WithMany(e => e.OrderHeaders)
+                .IsRequired()
+                .HasForeignKey(e => e.UserId)
+                .OnDelete(DeleteBehavior.NoAction);
+
             modelBuilder.Entity<OrderLine>()
                 .HasOne(e => e.Product)
                 .WithMany(x => x.OrderLines)

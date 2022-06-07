@@ -1,4 +1,8 @@
-﻿using System;
+﻿using Microsoft.EntityFrameworkCore;
+using ProductManager.Repository;
+using ProductManager.Repository.Models;
+using ProductManager.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -22,6 +26,20 @@ namespace ProductManager.Windows
         public OverviewWindow()
         {
             InitializeComponent();
+            using var context = new ProductManagerContext();
+            var users = context.Users
+                .Include(x=>x.OrderHeaders)
+                .Where(u => u.UserRoleId != (int)UserRoleEnum.WarehouseWorker)
+                .ToList();
+            var result = users.Select(x=> new SellerRatingViewModel { Name= $"{x.Name} {x.LastName}",OrderCount = x.OrderHeaders.Count }).ToList();
+            dataGrigSellerRating.ItemsSource = result;
+        }
+
+        private void btnBack_Click(object sender, RoutedEventArgs e)
+        {
+            MenuWindow menuWindow = new MenuWindow();
+            menuWindow.Show();
+            Hide();
         }
     }
 }
